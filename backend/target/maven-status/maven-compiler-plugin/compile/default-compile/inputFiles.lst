@@ -17,7 +17,10 @@ F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Referee.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Score.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Season.java
-F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Team.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamAway.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamAwayRepository.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamHome.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamHomeRepository.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TimeScore.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\infrastructure\MatchController.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\notification\Notification.java

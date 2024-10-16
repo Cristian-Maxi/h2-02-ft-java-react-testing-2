@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/match")
@@ -19,21 +20,15 @@ public class MatchController {
         this.service = service;
     }
 
-//    @GetMapping("/updateMatches")
-//    public void updateMatches() throws IOException, InterruptedException {
-//        service.UpdateMatches(matchIds);
-//    }
-
-    @GetMapping("/getMatches")
-    public ResponseEntity<List<Match>> UpdateAndGetMatches() throws IOException, InterruptedException {
-        service.UpdateMatches();
-        List<Match> matches = service.findAllMatches();
-        return new ResponseEntity<>(matches, HttpStatus.OK);
+    @GetMapping("/ligasUpdate")
+    public ResponseEntity<Void> updateLigas() throws IOException, InterruptedException {
+        service.UpdateMatches();  // Solo actualiza y guarda en la base de datos
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
-//    @GetMapping("/getMatches2")
-//    public ResponseEntity<List<Match>> getMatches() {
-//        List<Match> matches = service.findAllMatches();
-//        return new ResponseEntity<>(matches, HttpStatus.OK);
-//    }
+    @GetMapping("/getMatches/{code}")
+    public ResponseEntity<List<Match>> getLigasMatches(@PathVariable("code") String code) {
+        List<Match> matches = service.getMatchesWithinFiveDays(code.toUpperCase());
+        return new ResponseEntity<>(matches, HttpStatus.OK);
+    }
 }

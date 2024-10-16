@@ -1,6 +1,7 @@
 com\app\waki\user\domain\valueObject\Email.class
 com\app\waki\user\domain\valueObject\UserId.class
 com\app\waki\prediction\Prediccioton.class
+com\app\waki\match\domain\TeamHomeRepository.class
 com\app\waki\market\asd.class
 com\app\waki\user\infrastructure\controller\UserController.class
 com\app\waki\match\application\MatchService.class
@@ -12,7 +13,6 @@ com\app\waki\user\domain\UserRepository.class
 com\app\waki\profile\application\service\impl\ProfileServiceImpl.class
 com\app\waki\profile\domain\valueObjects\TotalPoints.class
 com\app\waki\user\application\service\TokenService.class
-com\app\waki\match\domain\Team.class
 com\app\waki\match\domain\Referee.class
 com\app\waki\user\domain\User.class
 com\app\waki\user\application\utils\UserAuth.class
@@ -37,12 +37,14 @@ com\app\waki\match\domain\Competition.class
 com\app\waki\user\infrastructure\security\SecurityConfig.class
 com\app\waki\user\infrastructure\security\AuthConfig.class
 com\app\waki\user\infrastructure\security\JwtService.class
+com\app\waki\match\domain\TeamAwayRepository.class
 com\app\waki\profile\domain\valueObjects\ProfileUserId.class
 com\app\waki\WakiApplication.class
 com\app\waki\profile\domain\ProfileRepository.class
 com\app\waki\user\application\utils\UserMapper.class
 com\app\waki\user\application\dto\CreateUserRequestDto.class
 com\app\waki\user\domain\valueObject\UserName.class
+com\app\waki\match\domain\TeamHome.class
 com\app\waki\swagger\OpenApiConfiguration.class
 com\app\waki\profile\application\dto\AvailablePredictionDto.class
 com\app\waki\common\exceptions\EmailNotAvailableException.class
@@ -60,6 +62,7 @@ com\app\waki\common\exceptions\GlobalHandlerException.class
 com\app\waki\user\application\service\UserService.class
 com\app\waki\match\domain\MatchResponse.class
 com\app\waki\common\asd.class
+com\app\waki\match\domain\TeamAway.class
 com\app\waki\match\domain\MatchRepository.class
 com\app\waki\profile\application\dto\ProfileDto.class
 com\app\waki\common\exceptions\package-info.class

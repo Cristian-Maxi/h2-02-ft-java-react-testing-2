@@ -1,5 +1,5 @@
-# Created at 2024-10-17T16:43:05.987
-Thread dump for process (3724@DESKTOP-H4TKTR9) after 30 seconds shutdown timeout:
+# Created at 2024-10-17T19:38:02.513
+Thread dump for process (4032@DESKTOP-H4TKTR9) after 30 seconds shutdown timeout:
 "main" 
    java.lang.Thread.State: WAITING
         at java.base@22.0.2/java.lang.Object.wait0(Native Method)
@@ -141,7 +141,7 @@ Thread dump for process (3724@DESKTOP-H4TKTR9) after 30 seconds shutdown timeout
         at app//org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:242)
         at app//org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:111)
         at app//org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:68)
-        at app//org.hibernate.internal.SessionImpl$$Lambda/0x00000122b5e28690.applyEventToListener(Unknown Source)
+        at app//org.hibernate.internal.SessionImpl$$Lambda/0x0000019ae1e28000.applyEventToListener(Unknown Source)
         at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
         at app//org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1225)
         at app//org.hibernate.internal.SessionImpl.internalLoad(SessionImpl.java:1071)
@@ -156,22 +156,22 @@ Thread dump for process (3724@DESKTOP-H4TKTR9) after 30 seconds shutdown timeout
         at app//org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
         at app//org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
         at app//org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$2(ConcreteSqmSelectQueryPlan.java:139)
-        at app//org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan$$Lambda/0x00000122b5cfa810.interpret(Unknown Source)
+        at app//org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan$$Lambda/0x0000019ae1cf9830.interpret(Unknown Source)
         at app//org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:382)
         at app//org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:302)
         at app//org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:526)
         at app//org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:423)
         at app//org.hibernate.query.Query.getResultList(Query.java:120)
         at app//org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAllById(SimpleJpaRepository.java:415)
-        at java.base@22.0.2/java.lang.invoke.LambdaForm$DMH/0x00000122b5024000.invokeVirtual(LambdaForm$DMH)
-        at java.base@22.0.2/java.lang.invoke.LambdaForm$MH/0x00000122b52c4400.invoke(LambdaForm$MH)
+        at java.base@22.0.2/java.lang.invoke.LambdaForm$DMH/0x0000019ae1024000.invokeVirtual(LambdaForm$DMH)
+        at java.base@22.0.2/java.lang.invoke.LambdaForm$MH/0x0000019ae1101400.invoke(LambdaForm$MH)
         at java.base@22.0.2/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
         at java.base@22.0.2/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
         at java.base@22.0.2/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
         at java.base@22.0.2/java.lang.reflect.Method.invoke(Method.java:580)
         at app//org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
         at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
-        at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker$$Lambda/0x00000122b5d97368.invoke(Unknown Source)
+        at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker$$Lambda/0x0000019ae1d9d318.invoke(Unknown Source)
         at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
         at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
         at app//org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
@@ -183,7 +183,7 @@ Thread dump for process (3724@DESKTOP-H4TKTR9) after 30 seconds shutdown timeout
         at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
         at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
         at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-        at app//org.springframework.transaction.interceptor.TransactionInterceptor$$Lambda/0x00000122b5cef440.proceedWithInvocation(Unknown Source)
+        at app//org.springframework.transaction.interceptor.TransactionInterceptor$$Lambda/0x0000019ae1cee600.proceedWithInvocation(Unknown Source)
 
 "surefire-forkedjvm-last-ditch-daemon-shutdown-thread-30s" 
    java.lang.Thread.State: RUNNABLE
@@ -208,14 +208,14 @@ Thread dump for process (3724@DESKTOP-H4TKTR9) after 30 seconds shutdown timeout
         at java.base@22.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1126)
         at java.base@22.0.2/java.util.concurrent.CountDownLatch.await(CountDownLatch.java:276)
         at app//org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:496)
-        at app//org.springframework.context.support.DefaultLifecycleProcessor$$Lambda/0x00000122b5e31d18.accept(Unknown Source)
+        at app//org.springframework.context.support.DefaultLifecycleProcessor$$Lambda/0x0000019ae1e316a0.accept(Unknown Source)
         at java.base@22.0.2/java.lang.Iterable.forEach(Iterable.java:75)
         at app//org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:315)
         at app//org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:215)
         at app//org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1148)
         at app//org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
         at app//org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-        at app//org.springframework.boot.SpringApplicationShutdownHook$$Lambda/0x00000122b5e31678.accept(Unknown Source)
+        at app//org.springframework.boot.SpringApplicationShutdownHook$$Lambda/0x0000019ae1e31000.accept(Unknown Source)
         at java.base@22.0.2/java.lang.Iterable.forEach(Iterable.java:75)
         at app//org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
         at java.base@22.0.2/java.lang.Thread.runWith(Thread.java:1583)

@@ -20,15 +20,11 @@ import java.util.stream.Collectors;
 public class MatchServiceImpl implements MatchService {
 
     private final MatchRepository matchRepository;
-    private final TeamHomeRepository teamHomeRepository;
-    private final TeamAwayRepository teamAwayRepository;
     private final ObjectMapper objectMapper;
     private final Random random = new Random(); // Generador de números aleatorios
 
-    public MatchServiceImpl(MatchRepository matchRepository, TeamHomeRepository teamHomeRepository, TeamAwayRepository teamAwayRepository, ObjectMapper objectMapper) {
+    public MatchServiceImpl(MatchRepository matchRepository, ObjectMapper objectMapper) {
         this.matchRepository = matchRepository;
-        this.teamHomeRepository = teamHomeRepository;
-        this.teamAwayRepository = teamAwayRepository;
         this.objectMapper = objectMapper;
     }
 
@@ -41,7 +37,7 @@ public class MatchServiceImpl implements MatchService {
                     .collect(Collectors.toMap(Match::getId, match -> match));
             for (String code : codes) {
                 HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create("https://api.football-data.org/v4/competitions/"+code+"/matches/?dateFrom=2024-10-01&dateTo=2024-10-30"))
+                        .uri(URI.create("https://api.football-data.org/v4/competitions/" + code + "/matches/?dateFrom=2024-10-01&dateTo=2024-10-30"))
                         .header("X-Auth-Token", "c83c236d84604a11b92b78aa10631d05")
                         .method("GET", HttpRequest.BodyPublishers.noBody())
                         .build();
@@ -58,29 +54,18 @@ public class MatchServiceImpl implements MatchService {
                         match.setMatch_odds(odds);
                     }
 
-                    // Al crear la DB por primera vez comentar esto, luego de creada descomentar y volver a crear
-                    //-------------------------------------------------------------------------------------------------//
-                    Optional<TeamHome> existingHomeTeam = teamHomeRepository.findByName(match.getHomeTeam().getName());
-                    if (existingHomeTeam.isPresent()) {
-                        match.setHomeTeam(existingHomeTeam.get());
-                    } else {
-                        match.setHomeTeam(teamHomeRepository.save(match.getHomeTeam())); // Guardar nuevo equipo
-                    }
-
-                    // Manejo del equipo visitante
-                    Optional<TeamAway> existingAwayTeam = teamAwayRepository.findByName(match.getAwayTeam().getName());
-                    if (existingAwayTeam.isPresent()) {
-                        match.setAwayTeam(existingAwayTeam.get());
-                    } else {
-                        match.setAwayTeam(teamAwayRepository.save(match.getAwayTeam())); // Guardar nuevo equipo
-                    }
-                    //-------------------------------------------------------------------------------------------------//
-                    Match existingMatch = existingMatchesMap.get(match.getId());
-                    if (existingMatch != null) {
+                    if (existingMatchesMap.containsKey(match.getId())) {
+                        Match existingMatch = existingMatchesMap.get(match.getId());
                         existingMatch.updateFrom(match);
                         matchRepository.save(existingMatch);
                     } else {
-                        matchRepository.save(match);
+                        // Verificar si ya existe el equipo local
+                        boolean homeTeamExists = matchRepository.existsByHomeTeamId(match.getHomeTeam().getId());
+                        // Verificar si ya existe el equipo visitante
+                        boolean awayTeamExists = matchRepository.existsByAwayTeamId(match.getAwayTeam().getId());
+                        if (!homeTeamExists && !awayTeamExists) {
+                            matchRepository.save(match);
+                        }
                     }
                 }
             }
@@ -89,7 +74,7 @@ public class MatchServiceImpl implements MatchService {
         } catch (Exception e) {
             System.out.println("Error saving match: " + e.getMessage());
         }
-    };
+    }
 
     @Override
     public List<Match> findAllMatches() {
@@ -106,5 +91,14 @@ public class MatchServiceImpl implements MatchService {
         LocalDateTime today = LocalDateTime.now();
         LocalDateTime fiveDaysLater = today.plusDays(5);
         return matchRepository.findMatchesByCompetitionAndDateRange(code, today, fiveDaysLater);
+    }
+
+    @Override
+    public List<MatchAreaCompetitionDTO> getMatchesWithAreaAndCompetition() {
+        List<MatchAreaCompetitionDTO> matches = matchRepository.findAllMatchesWithAreaAndCompetition();
+        // Usar Stream y distinct() para eliminar duplicados
+        return matches.stream()
+                .distinct()  // Eliminar duplicados en base a equals() y hashCode()
+                .collect(Collectors.toList());
     }
 }

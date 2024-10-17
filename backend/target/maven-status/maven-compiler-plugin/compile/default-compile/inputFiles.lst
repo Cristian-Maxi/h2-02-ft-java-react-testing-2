@@ -6,10 +6,13 @@ F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\common\exceptions\ValidationException.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\division\asd.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\market\asd.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\application\MatchAreaCompetitionDTO.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\application\MatchService.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\application\MatchServiceImpl.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Area.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\AreaRepository.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Competition.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\CompetitionRepository.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Match.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\MatchRepository.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\MatchResponse.java
@@ -17,6 +20,7 @@ F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Referee.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Score.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\Season.java
+F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\SeasonRepository.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamAway.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamAwayRepository.java
 F:\Cosas\Programas\Java\h2-02-ft-java-react-testing-2\backend\src\main\java\com\app\waki\match\domain\TeamHome.java

@@ -10,6 +10,7 @@ META-INF\spring-configuration-metadata.json
 com\app\waki\match\domain\Season.class
 com\app\waki\user\domain\package-info.class
 com\app\waki\user\domain\UserRepository.class
+com\app\waki\match\domain\AreaRepository.class
 com\app\waki\profile\application\service\impl\ProfileServiceImpl.class
 com\app\waki\profile\domain\valueObjects\TotalPoints.class
 com\app\waki\user\application\service\TokenService.class
@@ -17,6 +18,7 @@ com\app\waki\match\domain\Referee.class
 com\app\waki\user\domain\User.class
 com\app\waki\user\application\utils\UserAuth.class
 com\app\waki\user\domain\valueObject\Password.class
+com\app\waki\match\domain\CompetitionRepository.class
 com\app\waki\user\application\dto\JwtAuthToken.class
 com\app\waki\match\domain\Area.class
 com\app\waki\common\exceptions\EntityNotFoundException.class
@@ -52,6 +54,7 @@ com\app\waki\profile\application\service\ProfileService.class
 com\app\waki\user\application\dto\LoginUserAuthDto.class
 com\app\waki\match\domain\Score.class
 com\app\waki\common\exceptions\ValidationException.class
+com\app\waki\match\domain\SeasonRepository.class
 com\app\waki\profile\infrastructure\jpa\JpaProfileRepositoryImpl.class
 com\app\waki\user\infrastructure\security\SecretKeyConfig.class
 com\app\waki\profile\domain\valueObjects\RemainingPredictions.class
@@ -66,6 +69,7 @@ com\app\waki\match\domain\TeamAway.class
 com\app\waki\match\domain\MatchRepository.class
 com\app\waki\profile\application\dto\ProfileDto.class
 com\app\waki\common\exceptions\package-info.class
+com\app\waki\match\application\MatchAreaCompetitionDTO.class
 com\app\waki\notification\Notification.class
 com\app\waki\profile\application\utils\ProfileMapper.class
 com\app\waki\profile\domain\valueObjects\AvailablePredictionId.class

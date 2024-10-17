@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-//@JsonPropertyOrder({"area", "competition", "season", "id", "utcDate", "status", "venue", "matchday", "stage", "group", "lastUpdated", "homeTeam", "awayTeam", "score", "odds", "referees"})
+@JsonPropertyOrder({"area", "competition", "season", "id", "utcDate", "status", "venue", "matchday", "stage", "lastUpdated", "homeTeam", "awayTeam", "score", "odds", "referees"})
 public class Match {
 
     @Id
@@ -45,11 +45,6 @@ public class Match {
 
     private String stage;
 
-    @Column(name = "match_group")
-    private String group;
-
-    // Al crear la DB por primera vez comentar esto, luego de creada descomentar y volver a crear
-    //-------------------------------------------------------------------------------------------------//
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "home_team_id")
     private TeamHome homeTeam;
@@ -57,7 +52,6 @@ public class Match {
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "away_team_id")
     private TeamAway awayTeam;
-    //-------------------------------------------------------------------------------------------------//
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "score_id")
@@ -83,7 +77,6 @@ public class Match {
         this.setVenue(other.getVenue());
         this.setMatchday(other.getMatchday());
         this.setStage(other.getStage());
-        this.setGroup(other.getGroup());
         this.setScore(other.getScore());
         this.setLastUpdated(other.getLastUpdated());
         this.getReferees().clear();

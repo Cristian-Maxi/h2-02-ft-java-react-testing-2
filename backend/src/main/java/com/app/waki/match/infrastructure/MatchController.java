@@ -1,5 +1,6 @@
 package com.app.waki.match.infrastructure;
 
+import com.app.waki.match.application.MatchAreaCompetitionDTO;
 import com.app.waki.match.application.MatchService;
 import com.app.waki.match.domain.Match;
 import org.springframework.http.HttpStatus;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/match")
@@ -29,6 +29,12 @@ public class MatchController {
     @GetMapping("/getMatches/{code}")
     public ResponseEntity<List<Match>> getLigasMatches(@PathVariable("code") String code) {
         List<Match> matches = service.getMatchesWithinFiveDays(code.toUpperCase());
+        return new ResponseEntity<>(matches, HttpStatus.OK);
+    }
+
+    @GetMapping("/area-competition")
+    public ResponseEntity<List<MatchAreaCompetitionDTO>> getMatchesWithAreaAndCompetition() {
+        List<MatchAreaCompetitionDTO> matches = service.getMatchesWithAreaAndCompetition();
         return new ResponseEntity<>(matches, HttpStatus.OK);
     }
 }

@@ -11,4 +11,5 @@ public interface MatchService {
     List<Match> findAllMatches();
     Optional<Match> findById(Long id);
     List<Match> getMatchesWithinFiveDays(String code);
+    List<MatchAreaCompetitionDTO> getMatchesWithAreaAndCompetition();
 }
